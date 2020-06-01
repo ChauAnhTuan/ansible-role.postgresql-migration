@@ -10,10 +10,10 @@
 
 - name: Define apt gpg key.
   set_fact:
-    apt_gpg_key: "{{ __apt_gpg_key }}"
+    apt_gpg_key_url: "{{ __apt_gpg_key_url }}"
   when:
-    - apt_gpg_key is not defined
-    - __apt_gpg_key is defined
+    - apt_gpg_key_url is not defined
+    - __apt_gpg_key_url is defined
 
 - name: Define postgresql_repo.
   set_fact:
