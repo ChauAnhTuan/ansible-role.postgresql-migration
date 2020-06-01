@@ -13,3 +13,45 @@
   locale_gen: "name={{ item }} state=present"
   with_items: "{{ postgresql_locales }}"
   register: locale_gen_result
+
+
+
+
+
+- name: Add an Apt signing key for {{ service_name }}
+  apt_key:
+    url: "{{ apt_gpg_key }}"
+    state: present
+  when: apt_gpg_key is defined
+
+
+- name: Add {{ service_name }} repository
+  apt_repository:
+    repo: deb {{ postgresql_repository_url }}
+    state: present
+  when: apt_repository is defined
+
+- name: Ensure {{ service_name }} are installed.
+  apt:
+    name: "{{ packages_name }}"
+    update_cache: true
+    state: present
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- name: Ensure Mysql client are installed.
+  apt:
+    name: "{{ __mysql_package_name }}"
+    update_cache: true
+    state: present
