@@ -1,4 +1,9 @@
 ---
+- name: Ensure PostgreSQL Python libraries are installed.
+  apt:
+    name: "{{ postgresql_python_library }}"
+    state: present
+
 - name: Add an Apt signing key for {{ service_name }}
   apt_key:
     url: "{{ apt_gpg_key_url }}"

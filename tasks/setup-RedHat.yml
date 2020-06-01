@@ -1,4 +1,10 @@
 ---
+- name: Ensure PostgreSQL Python libraries are installed.
+  yum:
+    name: "{{ postgresql_python_library }}"
+    state: present
+    enablerepo: "{{ postgresql_enablerepo | default(omit, true) }}"
+
 - name: Install the PostgreSQL repo
   yum:
     name: "{{ postgresql_repository_url }}"
