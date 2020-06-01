@@ -2,6 +2,10 @@
 # Variable configuration.
 - include_tasks: variables.yml
 
+# Install psycopg2 python package
+- pip:
+  name: psycopg2
+
 # Setup/install tasks.
 - include_tasks: setup-RedHat.yml
   when: ansible_os_family == 'RedHat'
