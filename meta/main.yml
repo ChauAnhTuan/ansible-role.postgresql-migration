@@ -22,7 +22,6 @@ galaxy_info:
     - database
     - psql
     - postgresql
-    - postgresql-client
     - postgres
     - client
     - rdbms
