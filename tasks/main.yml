@@ -8,3 +8,9 @@
 
 - include_tasks: setup-Debian.yml
   when: ansible_os_family == 'Debian'
+
+- include_tasks: databases-dump.yml
+  when: databases_dump is defined
+- include_tasks: databases.yml
+- include_tasks: databases-restore.yml
+  when: databases_restore is defined

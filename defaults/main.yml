@@ -6,6 +6,9 @@ postgresql_enablerepo: ""
 # `restarted` or `reloaded`
 postgresql_restarted_state: "restarted"
 
+# Service name
+service_name: PostgreSQL
+
 postgresql_python_library: python-psycopg2
 postgresql_user: postgres
 postgresql_group: postgres
@@ -32,6 +35,36 @@ postgresql_hba_entries:
 # Debian only. Used to generate the locales used by PostgreSQL databases.
 postgresql_locales:
   - 'en_US.UTF-8'
+
+# A list of the database will be dump
+databases_dump: []
+# - name: exampledb # required; the rest are optional
+#   lc_collate: # defaults to 'en_US.UTF-8'
+#   lc_ctype: # defaults to 'en_US.UTF-8'
+#   encoding: # defaults to 'UTF-8'
+#   template: # defaults to 'template0'
+#   login_host: # defaults to 'localhost'
+#   login_password: # defaults to not set
+#   login_user: # defaults to '{{ postgresql_user }}'
+#   login_unix_socket: # defaults to 1st of postgresql_unix_socket_directories
+#   port: # defaults to not set
+#   owner: # defaults to postgresql_user
+#   state: # defaults to 'present'
+
+# A list of the database will be restore
+databases_restore: []
+# - name: exampledb # required; the rest are optional
+#   lc_collate: # defaults to 'en_US.UTF-8'
+#   lc_ctype: # defaults to 'en_US.UTF-8'
+#   encoding: # defaults to 'UTF-8'
+#   template: # defaults to 'template0'
+#   login_host: # defaults to 'localhost'
+#   login_password: # defaults to not set
+#   login_user: # defaults to '{{ postgresql_user }}'
+#   login_unix_socket: # defaults to 1st of postgresql_unix_socket_directories
+#   port: # defaults to not set
+#   owner: # defaults to postgresql_user
+#   state: # defaults to 'present'
 
 # Databases to ensure exist.
 postgresql_databases: []
