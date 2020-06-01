@@ -3,6 +3,7 @@
   hosts: all
   become: true
   vars:
+    - ansible_python_interpreter: /usr/bin/python
     - pip_install_packages: [psycopg2]
   roles:
     - role: chauanhtuandl.pip
