@@ -2,7 +2,8 @@
 - name: Converge
   hosts: all
   become: true
-
+  vars:
+    - pip_install_packages: [psycopg2]
   roles:
     - role: chauanhtuandl.pip
     - role: chauanhtuandl.postgresql-migration
