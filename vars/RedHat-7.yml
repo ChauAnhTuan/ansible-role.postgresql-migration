@@ -1,11 +1,4 @@
 ---
-__postgresql_version: "9.2"
-__postgresql_data_dir: "/var/lib/pgsql/data"
-__postgresql_bin_path: "/usr/bin"
-__postgresql_config_path: "/var/lib/pgsql/data"
-__postgresql_daemon: postgresql
+__postgresql_repository_url: https://download.postgresql.org/pub/repos/yum/reporpms/EL-6-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 __postgresql_packages:
-  - postgresql
-  - postgresql-server
-  - postgresql-contrib
-  - postgresql-libs
+  - postgresql12-client
