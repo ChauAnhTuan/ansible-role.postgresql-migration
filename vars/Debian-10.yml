@@ -2,4 +2,4 @@
 __postgresql_repository_url: http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main
 __apt_gpg_key_url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
 __postgresql_packages:
-  - postgresql-client-12
+  - postgresql-client
