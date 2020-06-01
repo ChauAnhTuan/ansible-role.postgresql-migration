@@ -6,6 +6,5 @@
     - ansible_python_interpreter: /usr/bin/python
     - pip_install_packages: [psycopg2]
   roles:
-    - role: chauanhtuandl.repo_epel
     - role: chauanhtuandl.pip
     - role: chauanhtuandl.postgresql-migration
